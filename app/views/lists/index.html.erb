@@ -2,7 +2,7 @@
   <h1>Your Lists 📋</h1>
   <ul>
     <% @lists.each do |list| %>
-      <li><%= list.name %></li>
+      <li><%= list.name %> - <%= link_to "Details", list_path(list) %> - <%= link_to "Create a bookmark", new_list_bookmark_path(list) %></li>
     <% end %>
   </ul>
 </div>

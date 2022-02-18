@@ -1,1 +1,18 @@
-<p><%= @list.name %></p>
+<div class="container">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div class="container">
+  <p><%= link_to "Back", lists_path %></p>
+</div>
+
+<div class="cards m-3">
+  <div class="card-category">
+    <% @list.bookmarks.each do |bookmark| %>
+      <h5><%= bookmark.movie.title %></h5>
+      <p> <%= bookmark.movie.rating %> ⭐️</p>
+      <p> <%= bookmark.movie.overview %> </p>
+      <p> <%= bookmark.comment %> </p>
+    <% end %>
+  </div>
+</div>
